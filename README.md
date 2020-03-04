@@ -1,7 +1,7 @@
 <<<<<<< HEAD
 
 =======
-# CeneoScraper11S
+# CeneoScrapper
 # Etap 1 - pobranie pojedynczeej opinii 
 - opinia
 - identyfikator
