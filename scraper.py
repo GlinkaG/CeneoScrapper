@@ -16,20 +16,27 @@ def extract_feature(opinion, selektor, attribute = None):
 
 #lista składowych opinii wraz z selektorami i atrybutami
 selectors = {
-    "opinion_id": ["data-entry-id"],
     "author": ['div.reviewer-name-line'],
-    "recomendation": ['div.product-review-summary > em'],
-    "stars": ['span.review-score-count'],
+    "recomendation":['div.product-review-summary > em'],
+    "stars":['span.review-score-count'],
     "content": ['p.product-review-body'],
-    "pros": ["div.pros-cell > ul"],
-    "cons": ["div.cons-cell > ul"],
-    "useful": ['button.vote-yes', "data-total-vote"],
-    "useless": ['button.vote-no', "data-total-vote"],
-    "purchased": ['div.product-review-pz'],
-    "purchase_date": ['span.review-time > time:nth-child(2)', 'datetime'],
-    "review_date": ['span.review-time > time:nth-child(1)', 'datetime']
+    "pros": ['div.pros-cell > ul'],
+    "cons":['div.cons-cell > ul'], 
+    "useful":['button.vote-yes', "data-total-vote"],
+    "useless":['button.vote-no', "data-total-vote"],
+    "purchased":['div.product-review-pz'],
+    "purchase_date":['span.review-time > time:nth-of-type(1)',"datetime"],
+    "review_date":['span.review-time > time:nth-of-type(2)',"datetime"]
 }
 
+#funkcja do usuwania bialych znakow
+def remove_whitespaces(text):
+    try:
+        for char in ["\n", "\r"]:
+            text = text.replace(char, ". ")
+        return text
+    except AttributeError:
+        pass
 
 #adres URL strony z opiniami
 url_prefix = "https://www.ceneo.pl"
@@ -52,12 +59,16 @@ while url is not None:
 
     #ekstrakcja składowyh dla pojedynczej opinii z listy
     for opinion in opinions:
-        opinion_id = opinion["data-entry-id"]
     
         features = {key:extract_feature(opinion, *args)
                     for key, args in selectors.items()}
         features["opinion_id"] = int(opinion["data-entry-id"])
         features["purchased"] = True if features["purchased"] == "Opinia potwierdzona zakupem" else False
+        features["useful"] = int(features["useful"])
+        features["usless"] = int(features["useless"])
+        features["content"] = remove_whitespaces(features["content"])
+        features["pros"] = remove_whitespaces(features["pros"])
+        features["cons"] = remove_whitespaces(features["cons"])
 
         opinions_list.append(features)
 
@@ -68,8 +79,8 @@ while url is not None:
 
     print("url: ", url)
 
-with open(product_id+".json", "w", encoding='utf-8') as fp:
-    json.dump(opinions_list, fp, ensure_ascii=False, indent=4)
+with open("opinions/"+product_id+".json", "w", encoding='utf-8') as fp:
+    json.dump(opinions_list, fp, ensure_ascii=False,separators=(",", ": "), indent=4)
 
 #print(len(opinions_list))
 #for opinion in opinions_list:

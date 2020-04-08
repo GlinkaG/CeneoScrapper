@@ -204,7 +204,7 @@
         "pros": "wygląd\nwygoda używania",
         "cons": "jakość dźwięku",
         "useful": "0",
-        "useless": "11",
+        "useless": "12",
         "purchased": true,
         "purchase_date": "2019-03-30 17:25:34",
         "review_date": "2019-04-05 15:22:41"
@@ -322,6 +322,20 @@
         "review_date": "2019-10-16 19:10:47"
     },
     {
+        "opinion_id": 12048026,
+        "author": "Użytkownik Ceneo",
+        "recomendation": "Polecam",
+        "stars": "5/5",
+        "content": "Wspaniały, wart swojej ceny",
+        "pros": null,
+        "cons": null,
+        "useful": "0",
+        "useless": "0",
+        "purchased": true,
+        "purchase_date": "2020-03-28 20:02:43",
+        "review_date": "2020-04-02 15:28:35"
+    },
+    {
         "opinion_id": 11817020,
         "author": "Użytkownik Ceneo",
         "recomendation": "Polecam",
@@ -348,6 +362,20 @@
         "purchased": true,
         "purchase_date": "2019-12-18 11:16:57",
         "review_date": "2020-02-01 00:10:15"
+    },
+    {
+        "opinion_id": 12054323,
+        "author": "Użytkownik Ceneo",
+        "recomendation": "Polecam",
+        "stars": "5/5",
+        "content": "Prezent trafiony w 10!",
+        "pros": null,
+        "cons": null,
+        "useful": "0",
+        "useless": "0",
+        "purchased": true,
+        "purchase_date": "2020-03-24 13:07:27",
+        "review_date": "2020-04-03 08:34:43"
     },
     {
         "opinion_id": 11893433,
@@ -390,6 +418,20 @@
         "purchased": true,
         "purchase_date": "2020-02-10 20:38:20",
         "review_date": "2020-02-14 11:32:33"
+    },
+    {
+        "opinion_id": 12066450,
+        "author": "Użytkownik Ceneo",
+        "recomendation": "Polecam",
+        "stars": "5/5",
+        "content": "godne polecenia",
+        "pros": null,
+        "cons": null,
+        "useful": "0",
+        "useless": "0",
+        "purchased": true,
+        "purchase_date": "2020-03-04 09:59:54",
+        "review_date": "2020-04-04 11:35:41"
     },
     {
         "opinion_id": 11385106,
@@ -560,6 +602,20 @@
         "review_date": "2019-07-04 21:09:30"
     },
     {
+        "opinion_id": 12032505,
+        "author": "Użytkownik Ceneo",
+        "recomendation": "Polecam",
+        "stars": "5/5",
+        "content": "fajnie chodzą i nie dają mi spokoju i emaile wysyłają cały czas więc oceniam by mi dali spokój.",
+        "pros": null,
+        "cons": null,
+        "useful": "0",
+        "useless": "0",
+        "purchased": true,
+        "purchase_date": "2020-03-01 12:05:05",
+        "review_date": "2020-04-01 13:15:51"
+    },
+    {
         "opinion_id": 11250795,
         "author": "Jakub",
         "recomendation": "Polecam",
@@ -630,6 +686,20 @@
         "review_date": "2020-02-13 22:09:55"
     },
     {
+        "opinion_id": 11827503,
+        "author": "Użytkownik Ceneo",
+        "recomendation": "Nie polecam",
+        "stars": "0,5/5",
+        "content": "brak było kabelka - nadal się nie mogę doprosić",
+        "pros": null,
+        "cons": null,
+        "useful": "0",
+        "useless": "0",
+        "purchased": true,
+        "purchase_date": "2020-01-29 20:19:26",
+        "review_date": "2020-02-29 15:53:40"
+    },
+    {
         "opinion_id": 11527316,
         "author": "Jerzy",
         "recomendation": "Polecam",
@@ -684,20 +754,6 @@
         "purchased": true,
         "purchase_date": "2019-12-27 14:13:05",
         "review_date": "2020-01-03 06:42:51"
-    },
-    {
-        "opinion_id": 11827503,
-        "author": "Użytkownik Ceneo",
-        "recomendation": "Nie polecam",
-        "stars": "0,5/5",
-        "content": "brak było kabelka - nadal się nie mogę doprosić",
-        "pros": null,
-        "cons": null,
-        "useful": "0",
-        "useless": "0",
-        "purchased": true,
-        "purchase_date": "2020-01-29 20:19:26",
-        "review_date": "2020-02-29 15:53:40"
     },
     {
         "opinion_id": 11644355,
