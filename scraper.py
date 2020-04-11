@@ -5,14 +5,14 @@ import pprint
 import json
 
 #funkcja do ekstrakcji składowych opinii
-def extract_feature(opinion, selektor, attribute = None):
+def extract_feature(opinion, selector, attribute = None):
     try:
         if not attribute:
-            return opinion.select(selektor).pop().get_text().strip()
+            return opinion.select(selector).pop().get_text().strip()
         else:
-            return opinion.select(selektor).pop()[attribute]
+            return opinion.select(selector).pop()[attribute]
     except IndexError:
-            return None
+        return None
 
 #lista składowych opinii wraz z selektorami i atrybutami
 selectors = {
@@ -38,6 +38,7 @@ def remove_whitespaces(text):
     except AttributeError:
         pass
 
+
 #adres URL strony z opiniami
 url_prefix = "https://www.ceneo.pl"
 product_id = input("Podaj kod produktu: ")
@@ -55,20 +56,21 @@ while url is not None:
     page_tree = BeautifulSoup(page_response.text, 'html.parser')
 
     #wybranie z kodu strony fragmentów odpowiadających poszczególnym opiniom
-    opinions = page_tree.select("li.review-box")
-
-    #ekstrakcja składowyh dla pojedynczej opinii z listy
-    for opinion in opinions:
+    opinions = page_tree.select("li.js_product-review")
     
+    #ekstrakcja składowyh dla pojedynczej opinii z listy
+    for opinion in opinions: 
+      
         features = {key:extract_feature(opinion, *args)
                     for key, args in selectors.items()}
         features["opinion_id"] = int(opinion["data-entry-id"])
         features["purchased"] = True if features["purchased"] == "Opinia potwierdzona zakupem" else False
         features["useful"] = int(features["useful"])
-        features["usless"] = int(features["useless"])
+        features["useless"] = int(features["useless"])
         features["content"] = remove_whitespaces(features["content"])
         features["pros"] = remove_whitespaces(features["pros"])
         features["cons"] = remove_whitespaces(features["cons"])
+        
 
         opinions_list.append(features)
 
@@ -77,11 +79,11 @@ while url is not None:
     except IndexError:
         url = None
 
-    print("url: ", url)
+    print("url:",url)
 
-with open("opinions/"+product_id+".json", "w", encoding='utf-8') as fp:
-    json.dump(opinions_list, fp, ensure_ascii=False,separators=(",", ": "), indent=4)
-
+with open("opinions/"+product_id+".json", 'w', encoding="UTF-8") as fp:
+    json.dump(opinions_list, fp, ensure_ascii=False, separators=(",",": "), indent=4 )
+    
 #print(len(opinions_list))
 #for opinion in opinions_list:
 #  pprint.pprint(opinion)

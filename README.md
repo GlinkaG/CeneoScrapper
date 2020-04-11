@@ -28,3 +28,4 @@
 - zapis pobranych danych do obiektu dataframe (ramka danych)
 - wykonanie prostych obliczeń na danych
 - wykonanie prostych wykresów
+-(blad w linii 59 opinions = page_tree.select("li.review-box") > opinions = page_tree.select("li.js_product-review"))
