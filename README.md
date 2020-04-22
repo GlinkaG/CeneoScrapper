@@ -29,3 +29,7 @@
 - wykonanie prostych obliczeń na danych
 - wykonanie prostych wykresów
 -(blad w linii 59 opinions = page_tree.select("li.review-box") > opinions = page_tree.select("li.js_product-review"))
+## Etap 6 - interfejs webowy aplikacji (framerwork Flask)
+- zainstalowanie i uruchomienie Flask'a
+- routing (nawigowanie po stronach serwisu)
+- widoki (Jinja)

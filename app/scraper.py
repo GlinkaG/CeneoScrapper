@@ -81,7 +81,7 @@ while url is not None:
 
     print("url:",url)
 
-with open("opinions/"+product_id+".json", 'w', encoding="UTF-8") as fp:
+with open("app/opinions/"+product_id+".json", 'w', encoding="UTF-8") as fp:
     json.dump(opinions_list, fp, ensure_ascii=False, separators=(",",": "), indent=4 )
     
 #print(len(opinions_list))
