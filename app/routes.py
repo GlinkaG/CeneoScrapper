@@ -1,9 +1,8 @@
 from app import app
-from flask import render_template
+from flask import render_template, request
 from flaskext.markdown import Markdown
 from app.forms import ProductForm
-
-
+app.config['SECRET_KEY'] = "Tajemniczy_mysi_sprzęt"
 
 Markdown(app)
 
@@ -12,13 +11,19 @@ Markdown(app)
 def index():
     return render_template("index.html")
 
-@app.route('/extract', methods= ['POST', 'GET'])
+@app.route('/about')
+def about():
+    content = ""
+    with open("README.md", "r",encoding="UTF-8") as f:
+        content = f.read()
+    return render_template("about.html", text=content)
+
+@app.route('/extract', methods = ['POST', 'GET'])
 def extract():
     form = ProductForm()
     if form.validate_on_submit():
-        return "Przesłano formularz"
-    return render_template("extract.html", text=form)
-
+        return "Przesłano formuarz"
+    return render_template("extract.html", form=form)
 
 @app.route('/products')
 def products():
@@ -28,12 +33,7 @@ def products():
 def product():
     pass
 
-@app.route('/about')
-def about():
-    with open("README.md", "r", encoding="UTF-8") as f:
-        content = f.read()
-    return render_template("about.html", text=content)
 
 @app.route('/analyzer/<product_id>')
 def analyzer():
-    return "Podaj kod produktu do analizy"
+    pass

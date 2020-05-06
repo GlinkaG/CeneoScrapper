@@ -10,5 +10,5 @@ class ProductForm(FlaskForm):
             Length(min=8, max=8, message="Kod produktu musi mieć 8 znaków"),
             Regexp(regex="^[0-9]+$", message="Kod produktu może zawierać tylko cyfry")
         ]
-    )   
-    submit = SubmitField("Test")
+    )
+    submit = SubmitField("Pobierz")
