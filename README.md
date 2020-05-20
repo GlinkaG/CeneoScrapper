@@ -1,15 +1,15 @@
 
 # CeneoScrapper
 # Etap 1 - pobranie pojedynczeej opinii 
-- opinia li.review-box
+- opinia div.js_product-review
 - identyfikator li.review-box["data.entry-id"]
-- autor div.reviever-name-line
-- rekomendacja div.product-reviever-summary > em
+- autor span.user-post_author-name
+- rekomendacja span.user-post__author-recomendation > em
 - liczba gwiazdek span.review-score-count
-- czy potwierdzona zakupem div.product.review-pz
+- czy potwierdzona zakupem div.review-pz
 - data wystawienia span.review-time > time
 ["datetime"] - pierwsze wystapienie
-- data zakupu span.review-time > time
+- data zakupu span.user-post__published > time:nth-of-type(1)',"datetime
 ["datetime"] - drugie wystapienie
 - przydatna button.votes-yes ["data-total-votes"]
 - nieprzydatna button.votes-no ["data-total-votes"]

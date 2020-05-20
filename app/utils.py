@@ -1,3 +1,4 @@
+
 def extract_feature(opinion, selector, attribute = None):
     try:
         if not attribute:
@@ -7,7 +8,8 @@ def extract_feature(opinion, selector, attribute = None):
     except IndexError:
         return None
 
-#funkcja do usuwania bialych znakow
+
+#funkcja do usuwania znaków formatujących
 def remove_whitespaces(text):
     try:
         for char in ["\n", "\r"]:
