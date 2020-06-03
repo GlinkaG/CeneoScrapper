@@ -1,4 +1,4 @@
-#import bibliotek
+
 import os
 import pandas as pd
 from matplotlib import pyplot as plt
@@ -7,7 +7,6 @@ import numpy as np
 #wyświetlenie zawartości katalogu opinions
 print(os.listdir("./app/opinions"))
 
-#wczytanie id produktu, którego opinie będą analizowane
 product_id = input("Podaj kod produktu: ")
 
 opinions = pd.read_json("app/opinions/"+product_id+".json")
